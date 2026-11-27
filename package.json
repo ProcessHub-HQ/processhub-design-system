@@ -39,5 +39,14 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json && node scripts/build.mjs",
     "typecheck": "tsc --noEmit"
+  },
+  "packageManager": "pnpm@11.21.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProcessHub-HQ/processhub-design-system.git"
+  },
+  "homepage": "https://github.com/ProcessHub-HQ/processhub-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/ProcessHub-HQ/processhub-design-system/issues"
   }
 }
