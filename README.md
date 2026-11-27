@@ -88,3 +88,7 @@ pnpm build
 ```
 
 `pnpm build` compiles TypeScript from `src/` into `dist/` and copies `tokens.css`, `base.css`, and `components.css` alongside it. The `dist/` directory is committed so the package can be consumed as a GitHub dependency without a build step; re-run `pnpm build` and commit the result after changing source.
+
+## License
+
+The ProcessHub design system is licensed under the [GNU Affero General Public License v3.0 or later](LICENSE).
