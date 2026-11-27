@@ -1,6 +1,6 @@
 {
-  "name": "@akashpoudelnp/design-system",
-  "version": "0.1.0",
+  "name": "@processhub/design-system",
+  "version": "0.1.1",
   "type": "module",
   "description": "ProcessHub design system: React components and CSS tokens.",
   "license": "UNLICENSED",

@@ -1,4 +1,4 @@
-# @akashpoudelnp/design-system
+# @processhub/design-system
 
 ProcessHub design system: React components, design tokens, and global CSS.
 
@@ -9,7 +9,7 @@ Install directly from GitHub (a committed `dist/` build ships with the tag):
 ```json
 {
   "dependencies": {
-    "@akashpoudelnp/design-system": "github:akashpoudelnp/processhub-design-system#v0.1.0"
+    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.1.1"
   }
 }
 ```
@@ -27,9 +27,9 @@ pnpm install
 Import the CSS once at your app entry point, in this order:
 
 ```ts
-import "@akashpoudelnp/design-system/tokens.css";
-import "@akashpoudelnp/design-system/base.css";
-import "@akashpoudelnp/design-system/components.css";
+import "@processhub/design-system/tokens.css";
+import "@processhub/design-system/base.css";
+import "@processhub/design-system/components.css";
 ```
 
 `tokens.css` defines the `--ph-*` custom properties, `base.css` applies element resets and page typography, and `components.css` styles the components below.
@@ -65,7 +65,7 @@ import {
   Modal,
   Section,
   Textarea,
-} from "@akashpoudelnp/design-system";
+} from "@processhub/design-system";
 ```
 
 - `Button` — `variant`: `primary` | `secondary` | `ghost` | `danger` | `new` | `icon`; `size`: `xs` | `sm` | `md` | `lg`; plus `icon`, `block`, and native button props.
@@ -77,7 +77,7 @@ import {
 - `Logo` — linked ProcessHub wordmark with the inline mark; `size`: `md` | `lg`.
 - `LogoMark` — the ProcessHub icon as inline SVG, safe to use anywhere (no asset URL resolution).
 
-The raw SVG also ships at `@akashpoudelnp/design-system/assets/icon.svg`.
+The raw SVG also ships at `@processhub/design-system/assets/icon.svg`.
 
 ## Local development
 
