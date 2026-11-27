@@ -1,0 +1,310 @@
+.ph-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  border: 1px solid transparent;
+  border-radius: var(--ph-radius-sm);
+  font-family: var(--ph-font-sans);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    color 150ms ease;
+}
+
+.ph-button svg {
+  flex: 0 0 auto;
+}
+
+.ph-button--xs {
+  min-height: 31px;
+  padding: 0 12px;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 550;
+}
+
+.ph-button--sm {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: var(--ph-text-xs);
+}
+
+.ph-button--md {
+  min-height: 38px;
+  padding: 0 16px;
+  font-size: var(--ph-text-sm);
+}
+
+.ph-button--lg {
+  min-height: 46px;
+  padding: 0 22px;
+  font-size: var(--ph-text-base);
+}
+
+.ph-button--primary {
+  border-color: var(--ph-color-accent-strong);
+  color: var(--ph-color-on-accent);
+  background: var(--ph-color-accent-strong);
+}
+
+.ph-button--primary:hover:not(:disabled) {
+  border-color: var(--ph-color-accent-strong-hover);
+  background: var(--ph-color-accent-strong-hover);
+}
+
+.ph-button--secondary {
+  border-color: var(--ph-color-line);
+  color: var(--ph-color-text-secondary);
+  background: var(--ph-color-neutral-soft);
+}
+
+.ph-button--secondary:hover:not(:disabled) {
+  border-color: var(--ph-color-line-contrast);
+  background: var(--ph-color-hover);
+}
+
+.ph-button--ghost {
+  color: var(--ph-color-muted);
+  background: transparent;
+}
+
+.ph-button--ghost:hover:not(:disabled) {
+  color: var(--ph-color-text);
+  background: var(--ph-color-neutral-soft);
+}
+
+.ph-button--new {
+  border-color: var(--ph-color-line);
+  color: var(--ph-color-text-secondary);
+  background: var(--ph-color-surface);
+}
+
+.ph-button--new:hover:not(:disabled) {
+  border-color: var(--ph-color-line-contrast);
+  background: var(--ph-color-surface-raised);
+}
+
+.ph-button--new.ph-button--xs {
+  min-height: 31px;
+  padding: 0 10px;
+  border-radius: var(--ph-radius-md);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.ph-button--icon {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--ph-radius-md);
+  place-items: center;
+  color: var(--ph-color-muted);
+  background: transparent;
+}
+
+.ph-button--icon:hover:not(:disabled),
+.ph-button--icon.active {
+  color: var(--ph-color-accent-hover);
+  background: var(--ph-color-hover);
+}
+
+.ph-button--danger {
+  border-color: var(--ph-color-danger-strong);
+  color: var(--ph-color-on-danger);
+  background: var(--ph-color-danger-strong);
+}
+
+.ph-button--danger:hover:not(:disabled) {
+  border-color: var(--ph-color-danger-strong-hover);
+  background: var(--ph-color-danger-strong-hover);
+}
+
+.ph-button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.ph-button--block {
+  width: 100%;
+}
+
+.ph-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border: 1px solid var(--ph-color-neutral-line);
+  border-radius: var(--ph-radius-pill);
+  color: var(--ph-color-muted);
+  background: var(--ph-color-neutral-soft);
+  font-size: var(--ph-text-xs);
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.ph-badge--accent {
+  border-color: var(--ph-color-accent-line);
+  color: var(--ph-color-accent-text);
+  background: var(--ph-color-accent-soft);
+}
+
+.ph-badge--sm {
+  padding: 2px 8px;
+  font-size: 9px;
+}
+
+.ph-badge--success {
+  border-color: var(--ph-color-success-line);
+  color: var(--ph-color-success-text);
+  background: var(--ph-color-success-soft);
+}
+
+.ph-badge--warning {
+  border-color: var(--ph-color-warning-line);
+  color: var(--ph-color-warning-text);
+  background: var(--ph-color-warning-soft);
+}
+
+.ph-badge--danger {
+  border-color: var(--ph-color-danger-line);
+  color: var(--ph-color-danger-text);
+  background: var(--ph-color-danger-soft);
+}
+
+.ph-container {
+  width: min(var(--ph-container), calc(100% - (var(--ph-gutter) * 2)));
+  margin-inline: auto;
+}
+
+.ph-container--narrow {
+  width: min(760px, calc(100% - (var(--ph-gutter) * 2)));
+}
+
+.ph-section {
+  padding-block: clamp(72px, 9vw, 128px);
+}
+
+.ph-section--tight {
+  padding-block: clamp(48px, 6vw, 80px);
+}
+
+.ph-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ph-color-text);
+  font-family: var(--ph-font-sans);
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.ph-logo__mark {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  box-shadow: var(--ph-shadow-logo);
+}
+
+.ph-logo--lg {
+  gap: 12px;
+  font-size: 18px;
+}
+
+.ph-logo--lg .ph-logo__mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.ph-field {
+  display: grid;
+  gap: 7px;
+  margin-top: 14px;
+  color: var(--ph-color-text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.ph-field > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ph-field small {
+  color: var(--ph-color-faint);
+  font-size: 9px;
+  font-weight: 400;
+}
+
+.ph-field input,
+.ph-field textarea {
+  width: 100%;
+  padding: 8px 9px;
+  border: 1px solid var(--ph-color-input-border);
+  border-radius: var(--ph-radius-sm);
+  color: var(--ph-color-text);
+  background: var(--ph-color-field);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.ph-field input,
+.ph-field select {
+  height: 33px;
+}
+
+.ph-field select {
+  width: 100%;
+  padding: 8px 9px;
+  border: 1px solid var(--ph-color-input-border);
+  border-radius: var(--ph-radius-sm);
+  color: var(--ph-color-text);
+  background: var(--ph-color-field);
+  font-size: 11px;
+}
+
+.ph-field input:disabled,
+.ph-field textarea:disabled,
+.ph-field select:disabled {
+  color: var(--ph-color-faint);
+  background: var(--ph-color-surface-disabled);
+  cursor: not-allowed;
+}
+
+.ph-field textarea {
+  resize: none;
+  font-family: var(--ph-font-mono);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.ph-field input::placeholder,
+.ph-field textarea::placeholder {
+  color: var(--ph-color-faint);
+}
+
+.ph-dialog-scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: var(--ph-color-scrim);
+}
