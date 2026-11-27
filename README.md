@@ -9,7 +9,7 @@ Install directly from GitHub (a committed `dist/` build ships with the tag):
 ```json
 {
   "dependencies": {
-    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.1.1"
+    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.2.0"
   }
 }
 ```
@@ -78,6 +78,14 @@ import {
 - `LogoMark` — the ProcessHub icon as inline SVG, safe to use anywhere (no asset URL resolution).
 
 The raw SVG also ships at `@processhub/design-system/assets/icon.svg`.
+
+## Design language
+
+The product UI follows the Apple HIG-aligned language in [DESIGN.md](DESIGN.md):
+an 11px minimum caption size, 13px body, 28/34px controls, a 6px control radius,
+an 8pt spacing grid, and complete hover, pressed, focus, and disabled states.
+
+The legacy `--ph-text-*` marketing scale stays available for the site.
 
 ## Local development
 

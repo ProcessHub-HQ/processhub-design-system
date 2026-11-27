@@ -4,7 +4,7 @@
   justify-content: center;
   gap: 0.45em;
   border: 1px solid transparent;
-  border-radius: var(--ph-radius-sm);
+  border-radius: var(--ph-radius-control);
   font-family: var(--ph-font-sans);
   font-weight: 600;
   line-height: 1;
@@ -12,9 +12,9 @@
   white-space: nowrap;
   cursor: pointer;
   transition:
-    background-color 150ms ease,
-    border-color 150ms ease,
-    color 150ms ease;
+    background-color var(--ph-duration-fast) var(--ph-ease-out),
+    border-color var(--ph-duration-fast) var(--ph-ease-out),
+    color var(--ph-duration-fast) var(--ph-ease-out);
 }
 
 .ph-button svg {
@@ -22,29 +22,29 @@
 }
 
 .ph-button--xs {
-  min-height: 31px;
-  padding: 0 12px;
-  gap: 6px;
-  font-size: 10px;
-  font-weight: 550;
+  min-height: var(--ph-control-xs);
+  padding: 0 8px;
+  gap: 4px;
+  font-size: var(--ph-text-caption);
+  font-weight: 590;
 }
 
 .ph-button--sm {
-  min-height: 30px;
+  min-height: var(--ph-control-sm);
   padding: 0 10px;
-  font-size: var(--ph-text-xs);
+  font-size: var(--ph-text-caption-strong);
 }
 
 .ph-button--md {
-  min-height: 38px;
-  padding: 0 16px;
-  font-size: var(--ph-text-sm);
+  min-height: var(--ph-control-md);
+  padding: 0 14px;
+  font-size: var(--ph-text-body);
 }
 
 .ph-button--lg {
-  min-height: 46px;
-  padding: 0 22px;
-  font-size: var(--ph-text-base);
+  min-height: var(--ph-control-lg);
+  padding: 0 20px;
+  font-size: var(--ph-text-subheadline);
 }
 
 .ph-button--primary {
@@ -91,21 +91,21 @@
 }
 
 .ph-button--new.ph-button--xs {
-  min-height: 31px;
-  padding: 0 10px;
-  border-radius: var(--ph-radius-md);
-  font-size: 10px;
+  min-height: var(--ph-control-xs);
+  padding: 0 8px;
+  border-radius: var(--ph-radius-control);
+  font-size: var(--ph-text-caption);
   font-weight: 600;
 }
 
 .ph-button--icon {
   display: grid;
-  width: 31px;
-  height: 31px;
+  width: var(--ph-control-sm);
+  height: var(--ph-control-sm);
   min-height: 0;
   padding: 0;
   border: 0;
-  border-radius: var(--ph-radius-md);
+  border-radius: var(--ph-radius-control);
   place-items: center;
   color: var(--ph-color-muted);
   background: transparent;
@@ -128,8 +128,17 @@
   background: var(--ph-color-danger-strong-hover);
 }
 
+.ph-button:active:not(:disabled) {
+  filter: brightness(0.94);
+}
+
+.ph-button:focus-visible {
+  outline: var(--ph-focus-width) solid var(--ph-color-focus);
+  outline-offset: var(--ph-focus-offset);
+}
+
 .ph-button:disabled {
-  opacity: 0.55;
+  opacity: 0.5;
   cursor: default;
 }
 
@@ -141,12 +150,12 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 3px 9px;
+  padding: 3px 8px;
   border: 1px solid var(--ph-color-neutral-line);
   border-radius: var(--ph-radius-pill);
   color: var(--ph-color-muted);
   background: var(--ph-color-neutral-soft);
-  font-size: var(--ph-text-xs);
+  font-size: var(--ph-text-caption-strong);
   font-weight: 600;
   line-height: 1.35;
   text-transform: capitalize;
@@ -160,8 +169,8 @@
 }
 
 .ph-badge--sm {
-  padding: 2px 8px;
-  font-size: 9px;
+  padding: 2px 7px;
+  font-size: var(--ph-text-caption);
 }
 
 .ph-badge--success {
@@ -233,11 +242,12 @@
 
 .ph-field {
   display: grid;
-  gap: 7px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 16px;
   color: var(--ph-color-text-secondary);
-  font-size: 10px;
-  font-weight: 600;
+  font-size: var(--ph-text-caption-strong);
+  font-weight: 590;
+  line-height: var(--ph-leading-caption-strong);
 }
 
 .ph-field > span {
@@ -248,35 +258,36 @@
 
 .ph-field small {
   color: var(--ph-color-faint);
-  font-size: 9px;
+  font-size: var(--ph-text-caption);
   font-weight: 400;
 }
 
 .ph-field input,
 .ph-field textarea {
   width: 100%;
-  padding: 8px 9px;
+  padding: 6px 8px;
   border: 1px solid var(--ph-color-input-border);
-  border-radius: var(--ph-radius-sm);
+  border-radius: var(--ph-radius-field);
   color: var(--ph-color-text);
   background: var(--ph-color-field);
-  font-size: 11px;
+  font-size: var(--ph-text-body);
   font-weight: 400;
+  line-height: var(--ph-leading-body);
 }
 
 .ph-field input,
 .ph-field select {
-  height: 33px;
+  height: var(--ph-control-sm);
 }
 
 .ph-field select {
   width: 100%;
-  padding: 8px 9px;
+  padding: 6px 8px;
   border: 1px solid var(--ph-color-input-border);
-  border-radius: var(--ph-radius-sm);
+  border-radius: var(--ph-radius-field);
   color: var(--ph-color-text);
   background: var(--ph-color-field);
-  font-size: 11px;
+  font-size: var(--ph-text-body);
 }
 
 .ph-field input:disabled,
@@ -290,8 +301,8 @@
 .ph-field textarea {
   resize: none;
   font-family: var(--ph-font-mono);
-  font-size: 10px;
-  line-height: 1.5;
+  font-size: var(--ph-text-caption-strong);
+  line-height: var(--ph-leading-caption-strong);
 }
 
 .ph-field input::placeholder,

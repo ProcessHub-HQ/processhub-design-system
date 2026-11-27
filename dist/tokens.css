@@ -127,6 +127,58 @@
   --ph-text-xl: 1.75rem;
   --ph-text-2xl: 2.5rem;
   --ph-text-3xl: clamp(2.75rem, 6vw, 4.5rem);
+
+  /* HIG semantic type scale (macOS) */
+  --ph-text-caption: 11px;
+  --ph-text-caption-strong: 12px;
+  --ph-text-body: 13px;
+  --ph-text-subheadline: 15px;
+  --ph-text-headline: 17px;
+  --ph-text-title3: 20px;
+  --ph-text-title2: 22px;
+  --ph-text-title1: 28px;
+  --ph-text-large-title: 34px;
+
+  --ph-leading-caption: 13px;
+  --ph-leading-caption-strong: 15px;
+  --ph-leading-body: 18px;
+  --ph-leading-subheadline: 20px;
+  --ph-leading-headline: 22px;
+  --ph-leading-title3: 25px;
+  --ph-leading-title2: 28px;
+  --ph-leading-title1: 34px;
+  --ph-leading-large-title: 41px;
+
+  /* HIG 8pt spacing scale */
+  --ph-space-1: 2px;
+  --ph-space-2: 4px;
+  --ph-space-3: 6px;
+  --ph-space-4: 8px;
+  --ph-space-5: 12px;
+  --ph-space-6: 16px;
+  --ph-space-7: 20px;
+  --ph-space-8: 24px;
+  --ph-space-9: 32px;
+  --ph-space-10: 40px;
+
+  /* HIG control heights */
+  --ph-control-xs: 22px;
+  --ph-control-sm: 28px;
+  --ph-control-md: 34px;
+  --ph-control-lg: 44px;
+
+  /* HIG corner radii */
+  --ph-radius-control: 6px;
+  --ph-radius-field: 6px;
+  --ph-radius-card: 10px;
+  --ph-radius-panel: 12px;
+
+  /* Motion and focus */
+  --ph-duration-fast: 120ms;
+  --ph-duration-base: 180ms;
+  --ph-ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ph-focus-width: 3px;
+  --ph-focus-offset: 2px;
 }
 
 [data-theme="dark"] {
