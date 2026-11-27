@@ -9,7 +9,7 @@ Install directly from GitHub (a committed `dist/` build ships with the tag):
 ```json
 {
   "dependencies": {
-    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.2.0"
+    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.2.1"
   }
 }
 ```

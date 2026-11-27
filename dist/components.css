@@ -280,6 +280,14 @@
   height: var(--ph-control-sm);
 }
 
+.ph-field input {
+  padding-block: 4px;
+}
+
+.ph-field select {
+  padding: 0 8px;
+}
+
 .ph-field select {
   width: 100%;
   padding: 6px 8px;
