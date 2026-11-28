@@ -9,7 +9,7 @@ Install directly from GitHub (a committed `dist/` build ships with the tag):
 ```json
 {
   "dependencies": {
-    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.2.2"
+    "@processhub/design-system": "github:ProcessHub-HQ/processhub-design-system#v0.3.0"
   }
 }
 ```
@@ -58,20 +58,39 @@ Light is also the fallback when no attribute is set. To follow the OS preference
 import {
   Badge,
   Button,
+  ButtonLink,
+  Checkbox,
   Container,
+  IconButton,
   Input,
   Logo,
   LogoMark,
+  Menu,
+  MenuItem,
+  MenuLabel,
+  MenuSeparator,
   Modal,
+  ProgressBar,
+  SearchField,
   Section,
+  Select,
+  StatusDot,
   Textarea,
 } from "@processhub/design-system";
 ```
 
 - `Button` — `variant`: `primary` | `secondary` | `ghost` | `danger` | `new` | `icon`; `size`: `xs` | `sm` | `md` | `lg`; plus `icon`, `block`, and native button props.
+- `ButtonLink` — the same visual API on an anchor.
+- `IconButton` — required `label` (sets `aria-label` and the default `title`); `variant`: `ghost` | `secondary` | `danger`; `size`: `xs` | `sm` | `md`; `pressed` and `active`.
 - `Badge` — `variant`: `neutral` | `accent` | `success` | `warning` | `danger`; `size`: `sm` | `md`.
-- `Input` / `Textarea` — native field props plus `label` and optional `hint`.
-- `Modal` — renders a dialog scrim; requires `titleId`, `className`, and `onClose` (Escape closes).
+- `Input` / `Textarea` — native field props plus `label`, optional `hint`, and `error` (sets `aria-invalid` and links the error text).
+- `Select` — labelled native select with `hint` and `error`.
+- `SearchField` — labelled search input; `size`: `sm` | `md`; `onEscape`, `onClear`, forwarded ref.
+- `Checkbox` — labelled checkbox with `indeterminate`.
+- `StatusDot` — `status`: `idle` | `running` | `warning` | `danger`; optional visible `label`.
+- `ProgressBar` — `label` plus optional `value`/`max`; omit `value` for indeterminate.
+- `Menu` / `MenuItem` / `MenuSeparator` / `MenuLabel` — presentational menu surface; `MenuItem` supports `icon`, `shortcut`, `danger`, `disabled`, and `onSelect`.
+- `Modal` — renders a dialog scrim; requires `titleId`, `className`, and `onClose` (Escape closes). Optional `descriptionId`; traps and restores focus and locks body scroll.
 - `Container` — page width wrapper; `narrow` for tighter content.
 - `Section` — vertical spacing wrapper; `tight` for reduced spacing.
 - `Logo` — linked ProcessHub wordmark with the inline mark; `size`: `md` | `lg`.
@@ -83,7 +102,8 @@ The raw SVG also ships at `@processhub/design-system/assets/icon.svg`.
 
 The product UI follows the Apple HIG-aligned language in [DESIGN.md](DESIGN.md):
 an 11px minimum caption size, 13px body, 28/34px controls, a 6px control radius,
-an 8pt spacing grid, and complete hover, pressed, focus, and disabled states.
+menu and form primitives, an 8pt spacing grid, and complete hover, pressed,
+focus, and disabled states.
 
 The legacy `--ph-text-*` marketing scale stays available for the site.
 

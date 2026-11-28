@@ -77,6 +77,21 @@ a:focus-visible {
   border: 0;
 }
 
+html.ph-modal-open {
+  overscroll-behavior: none;
+}
+
+@media (prefers-contrast: more) {
+  ::selection {
+    color: #ffffff;
+    background: #1f4f9e;
+  }
+
+  :root {
+    --ph-focus-width: 4px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

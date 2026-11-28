@@ -57,12 +57,20 @@ gutter so grids stay aligned.
 Buttons use a 6px radius, semibold labels, and four visible states: default,
 hover, pressed, focus. Disabled is a 50% reduction, not a new color.
 
-Text fields are 28px tall with 13px text and a 6px radius. Labels are 12px;
-hints are 11px. Inputs and text areas share the same border, radius, and focus
-ring.
+Icon-only buttons are square: 22px (`xs`), 28px (`sm`), or 34px (`md`), with a
+required accessible label. Menus use 30px rows with 13px labels, 11px shortcuts,
+5px surface padding, a 10px radius, and the menu shadow.
 
-Hit targets are at least 24 × 24px. Icon-only controls always carry an
-`aria-label` and a tooltip.
+Text fields are 28px tall with 13px text and a 6px radius. Labels are 12px;
+hints and errors are 11px. Inputs, text areas, and selects share the same
+border, radius, and focus ring. Search fields are 28px (`sm`) or 34px (`md`).
+Checkboxes are 15px with a 22px minimum row and a visible focus ring.
+
+Badges are 11px with a 6px radius. Progress tracks are 6px and use the accent
+fill; indeterminate tracks stop animating under reduced motion.
+
+Hit targets are at least 20 × 20px on desktop; the extra-small control is 22px.
+Icon-only controls always carry an `aria-label` and a tooltip.
 
 ## Color
 
@@ -72,10 +80,17 @@ or decorative hues.
 - Accent: primary actions, selection, focus, active navigation.
 - Status: `status-running`, `status-warning`, `status-danger`, `status-idle`.
 - Surfaces: canvas, bar, surface, raised, field.
+- Control: `control-bg`, `control-border`, `control-border-strong`,
+  `control-text` for secondary and icon-only controls.
+- Menu: `menu-bg`, `menu-border`, `menu-item-text`, `menu-item-hover-bg`,
+  `menu-label`, `menu-separator`.
+- Progress: `progress-track`, `progress-fill`.
 - Text: text, secondary, quiet, muted, faint. `faint` is the floor for metadata,
   never for body copy.
 
 Status is never carried by color alone: pair it with a dot, label, or icon.
+Status dots meet 3:1 against canvas and surface in both appearances. Text meets
+4.5:1; 18px and larger or bold text may use 3:1.
 
 ## Radii
 
@@ -83,9 +98,9 @@ Status is never carried by color alone: pair it with a dot, label, or icon.
 | --- | --- | --- |
 | `--ph-radius-control` | 6px | Buttons, icon buttons, inputs |
 | `--ph-radius-field` | 6px | Text fields, selects, textareas |
-| `--ph-radius-card` | 10px | Service cards, small panels |
+| `--ph-radius-card` | 10px | Service cards, menus, small panels |
 | `--ph-radius-panel` | 12px | Dialogs, popovers |
-| `--ph-radius-pill` | 999px | Badges only |
+| `--ph-radius-pill` | 999px | Progress tracks only |
 
 Do not invent intermediate radii (7, 11, 13, 15). If a surface needs a different
 corner, the surface is probably the wrong size.
@@ -97,6 +112,25 @@ corner, the surface is probably the wrong size.
 - Easing: `cubic-bezier(0.2, 0, 0, 1)`.
 - Motion conveys state only. No entrance choreography.
 - `prefers-reduced-motion` disables animation and smooth scrolling.
+
+## Components
+
+- **Button / ButtonLink** — `primary`, `secondary`, `ghost`, `danger`, `new`,
+  `icon`; `xs` through `lg`. Anchors use the same visual API.
+- **IconButton** — square, icon-only, `ghost`, `secondary`, or `danger`; supports
+  `pressed` and `active`.
+- **Menu** — surface plus `MenuItem`, `MenuSeparator`, and `MenuLabel`. Icons,
+  shortcuts, danger styling, disabled and busy items. Positioning and
+  outside-click behavior stay with the app.
+- **SearchField** — 28px or 34px, leading magnifier, clear button, Escape hook,
+  forwarded ref.
+- **Input / Textarea / Select** — label, hint, error, disabled, and focus states.
+- **Checkbox** — labelled, with mixed (`indeterminate`) support.
+- **StatusDot** — 6px dot with an optional visible label; the dot is hidden from
+  assistive technology when the label is present.
+- **ProgressBar** — determinate or indeterminate, labelled, reduced-motion safe.
+- **Modal** — scrim and panel with a focus trap, initial focus, focus restore,
+  `aria-describedby`, and scroll lock.
 
 ## Window chrome
 
@@ -116,8 +150,12 @@ corner, the surface is probably the wrong size.
 
 ## Accessibility
 
-- Body and placeholder text ≥ 4.5:1; large text ≥ 3:1.
+- Body and placeholder text ≥ 4.5:1; large text ≥ 3:1. Focus rings and status
+  dots ≥ 3:1 against their surfaces.
 - Every control has default, hover, pressed, focus, disabled, and loading states.
 - Status is announced in text, not only by color.
 - No motion or sound is the only signal for a state change.
 - Tab order follows reading order; overlays trap focus and restore it on close.
+- `prefers-contrast: more` raises text, border, and dot contrast.
+- `prefers-reduced-transparency: reduce` makes the scrim more opaque.
+- `prefers-reduced-motion: reduce` stops indeterminate progress.

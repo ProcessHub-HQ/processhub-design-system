@@ -32,6 +32,28 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   block?: boolean;
 }
 
+export function buttonClassName({
+  variant = "secondary",
+  size = "md",
+  block = false,
+  className = "",
+}: {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  block?: boolean;
+  className?: string;
+}) {
+  return [
+    "ph-button",
+    variantClass[variant],
+    sizeClass[size],
+    block ? "ph-button--block" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
 export function Button({
   variant = "secondary",
   size = "md",
@@ -46,15 +68,7 @@ export function Button({
     <button
       {...props}
       type={type}
-      className={[
-        "ph-button",
-        variantClass[variant],
-        sizeClass[size],
-        block ? "ph-button--block" : "",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={buttonClassName({ variant, size, block, className })}
     >
       {icon}
       {children}

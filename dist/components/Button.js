@@ -13,14 +13,17 @@ const sizeClass = {
     md: "ph-button--md",
     lg: "ph-button--lg",
 };
+export function buttonClassName({ variant = "secondary", size = "md", block = false, className = "", }) {
+    return [
+        "ph-button",
+        variantClass[variant],
+        sizeClass[size],
+        block ? "ph-button--block" : "",
+        className,
+    ]
+        .filter(Boolean)
+        .join(" ");
+}
 export function Button({ variant = "secondary", size = "md", icon, block = false, className = "", children, type = "button", ...props }) {
-    return (_jsxs("button", { ...props, type: type, className: [
-            "ph-button",
-            variantClass[variant],
-            sizeClass[size],
-            block ? "ph-button--block" : "",
-            className,
-        ]
-            .filter(Boolean)
-            .join(" "), children: [icon, children] }));
+    return (_jsxs("button", { ...props, type: type, className: buttonClassName({ variant, size, block, className }), children: [icon, children] }));
 }

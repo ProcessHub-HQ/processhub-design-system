@@ -7,5 +7,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     icon?: ReactNode;
     block?: boolean;
 }
+export declare function buttonClassName({ variant, size, block, className, }: {
+    variant?: ButtonVariant;
+    size?: ButtonSize;
+    block?: boolean;
+    className?: string;
+}): string;
 export declare function Button({ variant, size, icon, block, className, children, type, ...props }: ButtonProps): import("react").JSX.Element;
 export {};
